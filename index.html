@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ویلب | VIOLAB — Coming Soon</title>
+<meta name="description" content="ویلب (VIOLAB) — We Play The Taste. به‌زودی.">
+<meta name="theme-color" content="#FEF461">
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+  @font-face { font-family: "Kalameh"; src: url("kalameh-regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Kalameh"; src: url("kalameh-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+  @font-face { font-family: "Jost"; src: url("jost-500.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+  @font-face { font-family: "Audiowide"; src: url("audiowide.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+
+  :root {
+    --yellow: #FEF461;
+    --cream: #FFFBD6;
+    --ink: #1C1B17;
+    --ink-soft: #4A473B;
+    --orange: #E8892B;
+    --line: rgba(28, 27, 23, .14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Kalameh", Tahoma, sans-serif;
+    color: var(--ink);
+    background: var(--yellow);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+    overflow-x: hidden;
+  }
+
+  /* Storefront photo, softly faded into the logo yellow */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -30px;
+    background: url("storefront.jpg") center 30% / cover no-repeat;
+    filter: blur(4px);
+    opacity: .85;
+    z-index: -2;
+    animation: fadeIn 2.4s ease-out both;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center, rgba(254, 244, 97, .5) 0%, rgba(254, 244, 97, .78) 75%),
+      linear-gradient(180deg, rgba(254, 244, 97, .2), rgba(254, 244, 97, .5));
+    z-index: -1;
+  }
+
+  main {
+    width: 100%;
+    max-width: 540px;
+    text-align: center;
+    background: rgba(255, 252, 228, .74);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 40px 24px 30px;
+    box-shadow: 0 24px 60px -24px rgba(28, 27, 23, .35);
+    animation: rise 1.2s .3s ease-out both;
+  }
+
+  .logo {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 22px;
+    box-shadow: 0 0 0 6px rgba(28, 27, 23, .9), 0 12px 30px -10px rgba(28, 27, 23, .5);
+  }
+
+  .names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    direction: ltr;
+  }
+
+  .latin {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: clamp(36px, 10vw, 50px);
+    letter-spacing: .06em;
+    line-height: 1;
+  }
+
+  .sep { width: 1px; height: 40px; background: var(--line); }
+
+  .persian { height: clamp(36px, 10vw, 48px); width: auto; color: var(--ink); }
+
+  .slogan {
+    font-family: "Audiowide", sans-serif;
+    font-size: clamp(14px, 4vw, 17px);
+    margin-top: 14px;
+    direction: ltr;
+    color: var(--ink-soft);
+  }
+
+  .soon {
+    margin: 26px 0 6px;
+    font-family: "Audiowide", sans-serif;
+    font-size: clamp(26px, 8vw, 34px);
+    letter-spacing: .04em;
+    direction: ltr;
+  }
+
+  .soon-fa { font-size: 16px; color: var(--ink-soft); line-height: 1.9; }
+
+  section {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 56px;
+    padding: 10px 6px;
+    border-radius: 16px;
+    background: var(--ink);
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .btn:hover, .btn:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(28, 27, 23, .6); }
+
+  .btn.light { background: var(--cream); color: var(--ink); border: 1px solid var(--line); }
+
+  .btn .num { font-family: "Jost", sans-serif; direction: ltr; letter-spacing: .04em; font-size: 16px; }
+
+  .btn small { font-weight: 400; font-size: 12px; opacity: .8; }
+
+  footer {
+    margin-top: 24px;
+    font-family: "Jost", sans-serif;
+    font-size: 12px;
+    letter-spacing: .14em;
+    color: var(--ink-soft);
+    direction: ltr;
+  }
+
+  @media (max-width: 420px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: .85; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    body::before, main { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="logo.png" alt="VIO LAB" width="116" height="116">
+
+    <div class="names">
+      <span class="latin">VIOLAB</span>
+      <span class="sep" aria-hidden="true"></span>
+      <svg class="persian" viewBox="150 940 1110 290" role="img" aria-label="ویلب" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="square" stroke-linejoin="miter">
+        <!-- و -->
+        <rect x="1110" y="1022" width="115" height="123" rx="52"/>
+        <path d="M1225 1085 V1205 H1112"/>
+        <!-- small و mark -->
+        <circle cx="990" cy="983" r="15" stroke-width="13"/>
+        <path d="M1003 990 V1026 H968" stroke-width="13"/>
+        <!-- ی -->
+        <path d="M760 1137 H1045 V1065"/>
+        <rect x="955" y="1162" width="68" height="38" fill="currentColor" stroke="none"/>
+        <!-- ب + ل -->
+        <path d="M180 1107 H555 V1182 H668 V1000"/>
+        <rect x="238" y="1150" width="37" height="37" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+
+    <p class="slogan">We Play The Taste</p>
+
+    <p class="soon">Coming Soon</p>
+    <p class="soon-fa">سایت ویلب به‌زودی راه‌اندازی می‌شود.</p>
+
+    <section aria-labelledby="loc">
+      <h2 id="loc">مسیریابی تا ویلب</h2>
+      <div class="grid">
+        <a class="btn" id="nav-neshan" href="#" target="_blank" rel="noopener">نشان</a>
+        <a class="btn" id="nav-balad" href="#" target="_blank" rel="noopener">بلد</a>
+        <a class="btn" id="nav-google" href="https://maps.app.goo.gl/P29t38WUETMYJa5r9" target="_blank" rel="noopener">گوگل‌مپ</a>
+        <a class="btn" id="nav-waze" href="#" target="_blank" rel="noopener">ویز</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact">
+      <h2 id="contact">تماس با ما</h2>
+      <div class="grid two">
+        <a class="btn light" href="tel:+989128615653"><span class="num">0912 861 5653</span><small>موبایل</small></a>
+        <a class="btn light" href="tel:+982122282031"><span class="num">021 2228 2031</span><small>تلفن ثابت</small></a>
+      </div>
+    </section>
+
+    <footer>VIOLAB · WE PLAY THE TASTE</footer>
+  </main>
+
+<script>
+  // Café coordinates. The Google Maps button uses the shared link directly.
+  const LOCATION = { lat: 0, lng: 0 };
+
+  const routes = {
+    "nav-neshan": ({ lat, lng }) => `https://neshan.org/maps/routing/car/destination/${lat},${lng}`,
+    "nav-balad": ({ lat, lng }) => `https://balad.ir/directions/driving?destination=${lng},${lat}`,
+    "nav-waze": ({ lat, lng }) => `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`,
+    "nav-google": ({ lat, lng }) => `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`,
+  };
+
+  const hasLocation = LOCATION.lat !== 0 && LOCATION.lng !== 0;
+
+  for (const [id, build] of Object.entries(routes)) {
+    const link = document.getElementById(id);
+    if (!link) continue;
+    if (hasLocation) {
+      link.href = build(LOCATION);
+    } else if (id !== "nav-google") {
+      link.href = "https://maps.app.goo.gl/P29t38WUETMYJa5r9";
+    }
+  }
+</script>
+</body>
+</html>
