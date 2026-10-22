@@ -6,11 +6,13 @@ Static site: `index.html` plus its images and fonts. It has no build step.
 
 ## Deploy (ParsPack VPS, nginx root `/var/www/violab`)
 
-```
-scp -r "D:\Claude Data\Cool Comp\violab" root@188.212.97.60:/var/www/
-```
+The server keeps `/var/www/violab` as a git clone and a cron job resets it to `origin/main` every 2 minutes, so merging a PR into `main` deploys it.
 
 ArvanCloud sits in front (CDN + HTTPS). Purge its cache after an update.
+
+## App icon (Add to Home Screen)
+
+`manifest.json` names the app **VioLab** and points at the icons in `icons/` (192/512, plus maskable versions for Android). iOS uses `icons/apple-touch-icon.png` and the `apple-mobile-web-app-title` meta tag. All icons are generated from `logo.png` on the theme yellow `#FEF461`.
 
 ## Routing coordinates
 
