@@ -170,6 +170,20 @@
 
   .btn .handle { font-family: "Jost", sans-serif; direction: ltr; letter-spacing: .03em; font-size: 16px; }
 
+  .hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--yellow);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .hours .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
+
   footer {
     margin-top: 24px;
     font-family: "Jost", sans-serif;
@@ -218,6 +232,11 @@
 
     <p class="soon">Coming Soon</p>
     <p class="soon-fa">سایت ویلب به‌زودی راه‌اندازی می‌شود.</p>
+
+    <section aria-labelledby="hours">
+      <h2 id="hours">ساعت کاری</h2>
+      <p class="hours"><span>همه‌روزه</span><span class="dot" aria-hidden="true"></span><span>ساعت ۸ تا ۲۳</span></p>
+    </section>
 
     <section aria-labelledby="loc">
       <h2 id="loc">مسیریابی تا ویلب</h2>
