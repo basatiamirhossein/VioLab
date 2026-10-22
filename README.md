@@ -14,4 +14,4 @@ ArvanCloud sits in front (CDN + HTTPS). Purge its cache after an update.
 
 ## Routing coordinates
 
-Set `LOCATION` in `index.html` to the café's lat/lng. Until then, every routing button opens the Google Maps link.
+`LOCATION` in `index.html` holds the café's coordinates (35.7944806, 51.4735148). The Neshan, Balad, Google Maps and Waze buttons build their routing links from it.
