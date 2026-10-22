@@ -60,6 +60,7 @@
 
   main {
     width: 100%;
+    min-width: 0;
     max-width: 540px;
     text-align: center;
     background: rgba(255, 252, 228, .74);
@@ -85,21 +86,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: clamp(10px, 3vw, 18px);
+    flex-wrap: wrap;
     direction: ltr;
   }
 
   .latin {
     font-family: "Jost", sans-serif;
     font-weight: 500;
-    font-size: clamp(36px, 10vw, 50px);
+    font-size: clamp(28px, 9vw, 50px);
     letter-spacing: .06em;
     line-height: 1;
   }
 
   .sep { width: 1px; height: 40px; background: var(--line); }
 
-  .persian { height: clamp(36px, 10vw, 48px); width: auto; color: var(--ink); }
+  .persian { height: clamp(28px, 8.5vw, 48px); width: auto; max-width: 45%; color: var(--ink); }
 
   .slogan {
     font-family: "Audiowide", sans-serif;
@@ -156,9 +158,15 @@
 
   .btn.light { background: var(--cream); color: var(--ink); border: 1px solid var(--line); }
 
-  .btn .num { font-family: "Jost", sans-serif; direction: ltr; letter-spacing: .04em; font-size: 16px; }
+  .btn .num { font-family: "Jost", sans-serif; direction: ltr; letter-spacing: .02em; font-size: clamp(13px, 4vw, 16px); white-space: nowrap; }
 
   .btn small { font-weight: 400; font-size: 12px; opacity: .8; }
+
+  .btn.insta { flex-direction: row; gap: 10px; }
+
+  .btn.insta svg { width: 22px; height: 22px; }
+
+  .btn .handle { font-family: "Jost", sans-serif; direction: ltr; letter-spacing: .03em; font-size: 16px; }
 
   footer {
     margin-top: 24px;
@@ -225,6 +233,14 @@
         <a class="btn light" href="tel:+989128615653"><span class="num">0912 861 5653</span><small>موبایل</small></a>
         <a class="btn light" href="tel:+982122282031"><span class="num">021 2228 2031</span><small>تلفن ثابت</small></a>
       </div>
+    </section>
+
+    <section aria-labelledby="social">
+      <h2 id="social">ما را دنبال کنید</h2>
+      <a class="btn insta" href="https://www.instagram.com/violab.tehran" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg>
+        <span class="handle">@violab.tehran</span>
+      </a>
     </section>
 
     <footer>VIOLAB · WE PLAY THE TASTE</footer>
